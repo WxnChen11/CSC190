@@ -50,18 +50,18 @@ c->hasNav = nav;
 
 void printCarState(struct Car * c){
 
-printf("Speed of the Car is: %d",c->veh->currSpeed);
-printf("Gear of the Car is set at: %d",c->veh->gear);
-printf("Passengers in the Car are: %d",c->veh->numPassengers);
-printf("Navigator in the Car: %d",c->hasNav);
+printf("Speed of the Car is: %d\n",c->veh->currSpeed);
+printf("Gear of the Car is set at: %d\n",c->veh->gear);
+printf("Passengers in the Car are: %d\n",c->veh->numPassengers);
+printf("Navigator in the Car: %d\n",c->hasNav);
 
 }
 
 struct Car * initCar(int nav, char * model)
 {
 
-Car *car1 = (Car *)malloc(sizeof(Car));
-vInterface vInt = initVInterface(setSpeed, setGear, setPassengers); 
+struct Car *car1 = (struct Car * )malloc(sizeof(struct Car));
+struct vInterface vInt = initVInterface(setSpeed, setGear, setPassengers); 
 car1->veh = initVehicle(4, model, vInt);
 car1->hasNav = nav;
 car1->setCarState = setCarState;
@@ -71,6 +71,7 @@ car1->setCarState = setCarState;
                        
 void cleanUpCar(struct Car * c)
 {
+	cleanUpVehicle(c->veh);
 	free(c);
 }
                        

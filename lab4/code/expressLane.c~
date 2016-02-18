@@ -54,7 +54,7 @@ while(eL != NULL){
 
 cleanUpCar(eL->car);
 
-struct ExpressLaneRec *temp = eL->nextRec;
+temp = eL->nextRec;
 
 free(eL);
 

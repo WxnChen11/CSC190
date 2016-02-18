@@ -3,9 +3,9 @@
 struct Vehicle * initVehicle(int wheels, char * model, struct vInterface vInt)
 {
 
-Vehicle *vehic = (Vehicle *)malloc(sizeof(Vehicle));
+struct Vehicle *vehic = (struct Vehicle *)malloc(sizeof(struct Vehicle));
 
-vehic->numwheels = wheels;
+vehic->numWheels = wheels;
 strcpy(vehic->model, model);
 vehic->vehInt = vInt;
 vehic->numPassengers=0;

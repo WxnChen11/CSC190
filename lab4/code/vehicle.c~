@@ -3,7 +3,7 @@
 struct Vehicle * initVehicle(int wheels, char * model, struct vInterface vInt)
 {
 
-Vehicle *vehic = (Vehicle *)malloc(sizeof(Vehicle));
+struct Vehicle *vehic = (struct Vehicle *)malloc(sizeof(struct Vehicle));
 
 vehic->numwheels = wheels;
 strcpy(vehic->model, model);
@@ -18,6 +18,6 @@ return vehic;
 
 void cleanUpVehicle(struct Vehicle * v)
 {
-
+	free(v);
 }
 
