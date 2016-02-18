@@ -40,6 +40,8 @@ printf("Car exit time is %f\n",eLCurr->exitTime);
 
 printCarState(eLCurr->car);
 
+printf("\n")'
+
 eLCurr = eLCurr->nextRec;
 
 }
@@ -54,7 +56,7 @@ while(eL != NULL){
 
 cleanUpCar(eL->car);
 
-temp = eL->nextRec;
+struct ExpressLaneRec *temp = eL->nextRec;
 
 free(eL);
 

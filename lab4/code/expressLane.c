@@ -40,6 +40,8 @@ printf("Car exit time is %f\n",eLCurr->exitTime);
 
 printCarState(eLCurr->car);
 
+printf("\n");
+
 eLCurr = eLCurr->nextRec;
 
 }
